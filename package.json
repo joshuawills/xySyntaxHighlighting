@@ -1,0 +1,25 @@
+{
+  "name": "xy",
+  "displayName": "XY",
+  "description": "XY Programming Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "xy",
+      "aliases": ["XY Programming Language", "xy"],
+      "extensions": [".xy"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "xy",
+      "scopeName": "source.xy",
+      "path": "./syntaxes/xy.tmLanguage.json"
+    }]
+  }
+}

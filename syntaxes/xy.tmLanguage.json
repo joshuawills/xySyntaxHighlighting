@@ -1,0 +1,133 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "xy",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#libraries"
+    },
+    {
+      "include": "#datatypes"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#literal"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+
+    
+    "libraries": {
+      "patterns": [
+        {
+          "match": "([a-zA-Z]+)(::)([a-zA-Z0-9]+)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.preprocessor.xy"
+            },
+            "2": {
+              "name": "keyword.operator.logical.xy"
+            },
+            "3": {
+              "name": "support.type.property-name.less.xy"
+            }
+          }
+        }
+      ]
+    },
+    
+    "operators": {
+      "patterns": [
+        {
+          "match": "&&|!|\\|\\|",
+          "name": "keyword.operator.logical.xy"
+        },
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.xy"
+        },
+        {
+          "match": "!=|<=|>=|==|<|>",
+          "name": "keyword.operator.comparison.xy"
+        },
+        {
+          "match": "--",
+          "name": "keyword.operator.decrement.xy"
+        },
+        {
+          "match": "\\+\\+",
+          "name": "keyword.operator.increment.xy"
+        },
+        {
+          "match": "%=|\\+=|-=|\\*=|(?<!\\()/=",
+          "name": "keyword.operator.assignment.compound.xy"
+        }
+      ]
+    },
+    "literal": {
+      "patterns": [
+      {
+        "name": "constant.Language.xy",
+        "match": "\\b(False|True)\\b"
+      }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "begin": "//",
+          "end": "$",
+          "name": "comment.line.xy"
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.xy"
+        }
+      ]
+    },
+    "datatypes": {
+      "patterns": [
+        {
+          "name": "variable.parameter.xy",
+          "match": "(?<!<)(int|float|str|array|struct|null|s(8|16|32|64)|u(8|16|32|64)|f(32|64))(?!>)"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.xy",
+          "match": "\\b(if|else if|else|while|for|return|import|using|ftn)\\b"
+        },
+        {
+          "name": "keyword.control.xy",
+          "match": "\\b(break|continue)\\b"
+        }
+      ]
+    },
+    
+    "strings": {
+      "name": "string.quoted.double.xy",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.xy",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.xy"
+}
