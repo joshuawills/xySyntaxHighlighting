@@ -78,7 +78,7 @@
       "patterns": [
       {
         "name": "constant.Language.xy",
-        "match": "\\b(False|True)\\b"
+        "match": "\\b(false|true)\\b"
       }
       ]
     },
@@ -100,15 +100,23 @@
       "patterns": [
         {
           "name": "variable.parameter.xy",
-          "match": "(?<!<)(int|float|str|array|struct|null|s(8|16|32|64)|u(8|16|32|64)|f(32|64))(?!>)"
+          "match": "(?<!<)(int|void|float|string|array|struct|null|s(8|16|32|64)|u(8|16|32|64)|f(32|64))(?!>)"
         }
       ]
     },
     "keywords": {
       "patterns": [
         {
+          "name": "keyword.declaration.xy",
+          "match": "mut"
+        },
+        {
+          "name": "keyword.operator.arrow.xy",
+          "match": "->"
+        },
+        {
           "name": "keyword.other.xy",
-          "match": "\\b(if|else if|else|while|for|return|import|using|ftn)\\b"
+          "match": "\\b(if|else if|else|while|out|in|loop|do|for|return|import|export|define)\\b"
         },
         {
           "name": "keyword.control.xy",
